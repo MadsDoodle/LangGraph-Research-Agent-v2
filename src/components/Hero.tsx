@@ -48,13 +48,6 @@ export const Hero = ({ onStartSession }: HeroProps) => {
           Start Research Session
           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Button>
-        
-        {/* Floating Indicator */}
-        <div className="mt-16 animate-float">
-          <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse-orange" />
-          </div>
-        </div>
       </div>
     </section>
   );
