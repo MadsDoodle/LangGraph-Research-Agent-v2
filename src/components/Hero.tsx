@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero = ({ onStartSession }: HeroProps) => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Grid Background */}
       <div className="animated-grid-bg">
         <div className="grid-overlay" />
@@ -56,6 +56,6 @@ export const Hero = ({ onStartSession }: HeroProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

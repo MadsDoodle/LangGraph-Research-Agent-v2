@@ -232,7 +232,7 @@ All colors MUST be HSL.
     position: fixed;
     inset: 0;
     background: 
-      linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+      linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
     pointer-events: none;
     z-index: 0;
   }
@@ -241,12 +241,11 @@ All colors MUST be HSL.
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(42, 42, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(42, 42, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(rgba(255, 107, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
-    background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px;
+      linear-gradient(rgba(60, 60, 60, 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(60, 60, 60, 0.4) 1px, transparent 1px);
+    background-size: 60px 60px;
     animation: grid-flow 45s linear infinite;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
   }
 
   .glow-spot {

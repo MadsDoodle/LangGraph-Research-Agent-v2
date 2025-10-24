@@ -26,7 +26,7 @@ const features = [
 
 export const FeatureGrid = () => {
   return (
-    <div className="relative py-24 px-4">
+    <section id="features" className="relative py-24 px-4">
       {/* Section Header */}
       <div className="text-center mb-16 animate-fade-in">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -43,6 +43,6 @@ export const FeatureGrid = () => {
           <FeatureCard key={feature.title} {...feature} index={index} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
