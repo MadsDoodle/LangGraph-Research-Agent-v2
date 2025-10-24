@@ -9,10 +9,15 @@ export const Hero = ({ onStartSession }: HeroProps) => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Grid Background */}
-      <div className="animated-grid-bg" />
+      <div className="animated-grid-bg">
+        <div className="grid-overlay" />
+        <div className="glow-spot glow-spot-1" />
+        <div className="glow-spot glow-spot-2" />
+        <div className="glow-spot glow-spot-3" />
+      </div>
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background pointer-events-none" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">

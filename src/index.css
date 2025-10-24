@@ -97,6 +97,28 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes breathe-glow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes breathe-glow-delayed {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.03);
+  }
+}
+
 @keyframes pulse-orange {
   0%, 100% {
     opacity: 1;
@@ -209,12 +231,62 @@ All colors MUST be HSL.
   .animated-grid-bg {
     position: fixed;
     inset: 0;
-    background-image: 
-      linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: grid-flow 30s linear infinite;
+    background: 
+      linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
     pointer-events: none;
     z-index: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(42, 42, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 42, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(255, 107, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px;
+    animation: grid-flow 45s linear infinite;
+  }
+
+  .glow-spot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .glow-spot-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    top: 20%;
+    left: 15%;
+    animation: breathe-glow 4s ease-in-out infinite;
+  }
+
+  .glow-spot-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 140, 66, 0.12) 0%, transparent 70%);
+    bottom: 25%;
+    right: 20%;
+    animation: breathe-glow-delayed 5s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .glow-spot-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: breathe-glow 3.5s ease-in-out infinite;
+    animation-delay: 2.5s;
+  }
+
+  .animate-breathe-glow {
+    animation: breathe-glow 4s ease-in-out infinite;
   }
 }
