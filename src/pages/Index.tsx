@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from "react-router-dom";
+import { Hero } from "@/components/Hero";
+import { FeatureGrid } from "@/components/FeatureGrid";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleStartSession = () => {
+    toast({
+      title: "Starting Research Session",
+      description: "Initializing your AI research assistant...",
+    });
+    
+    // Navigate to chat interface
+    setTimeout(() => {
+      navigate("/chat");
+    }, 800);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <Hero onStartSession={handleStartSession} />
+      
+      {/* Features Section */}
+      <FeatureGrid />
     </div>
   );
 };
