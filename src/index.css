@@ -231,8 +231,8 @@ All colors MUST be HSL.
   .animated-grid-bg {
     position: fixed;
     inset: 0;
-    background: 
-      linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+    background:
+      radial-gradient(circle at center, #000000 0%, #0a0a0a 40%, #111111 100%);
     pointer-events: none;
     z-index: 0;
   }
@@ -240,12 +240,13 @@ All colors MUST be HSL.
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: 
-      linear-gradient(rgba(60, 60, 60, 0.4) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(60, 60, 60, 0.4) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-image:
+      linear-gradient(rgba(220, 220, 220, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220, 220, 220, 0.15) 1px, transparent 1px);
+    background-size: 80px 80px;
     animation: grid-flow 45s linear infinite;
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    mask-image: radial-gradient(circle at center, transparent 25%, black 45%, black 65%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at center, transparent 25%, black 45%, black 65%, transparent 85%);
   }
 
   .glow-spot {

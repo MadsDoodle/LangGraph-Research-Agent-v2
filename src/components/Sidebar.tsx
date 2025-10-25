@@ -26,6 +26,7 @@ interface SidebarProps {
   papersFound?: string[];
   pdfGenerated?: boolean;
   onQuickAction?: (action: string) => void;
+  onDownloadPdf?: () => void;
 }
 
 export const Sidebar = ({ 
@@ -34,7 +35,8 @@ export const Sidebar = ({
   toolsUsed = [], 
   papersFound = [], 
   pdfGenerated,
-  onQuickAction
+  onQuickAction,
+  onDownloadPdf
 }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -87,7 +89,7 @@ export const Sidebar = ({
               </h3>
               <div className="space-y-2">
                 <Button
-                  onClick={() => onQuickAction?.("search")}
+                  onClick={() => onQuickAction?.("search_all")}
                   className="w-full justify-start bg-primary/10 hover:bg-primary/20 text-foreground border border-primary/30 hover:border-primary/50 transition-all"
                   variant="outline"
                 >
@@ -95,7 +97,7 @@ export const Sidebar = ({
                   Search All Databases
                 </Button>
                 <Button
-                  onClick={() => onQuickAction?.("write")}
+                  onClick={() => onQuickAction?.("write_paper")}
                   className="w-full justify-start bg-primary/10 hover:bg-primary/20 text-foreground border border-primary/30 hover:border-primary/50 transition-all"
                   variant="outline"
                 >
@@ -170,7 +172,10 @@ export const Sidebar = ({
                     <CheckCircle2 className="w-4 h-4 text-success" />
                     <span className="text-sm font-medium text-foreground">PDF Generated</span>
                   </div>
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary glow-orange">
+                  <Button 
+                    onClick={onDownloadPdf}
+                    className="w-full bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary glow-orange"
+                  >
                     <Download className="w-4 h-4 mr-2" />
                     Download PDF
                   </Button>
@@ -182,7 +187,7 @@ export const Sidebar = ({
           // Collapsed View - Icons Only
           <div className="flex flex-col items-center gap-4 px-2">
             <Button
-              onClick={() => onQuickAction?.("search")}
+              onClick={() => onQuickAction?.("search_all")}
               variant="ghost"
               size="icon"
               className="text-primary hover:bg-primary/10"
@@ -191,7 +196,7 @@ export const Sidebar = ({
               <Search className="w-5 h-5" />
             </Button>
             <Button
-              onClick={() => onQuickAction?.("write")}
+              onClick={() => onQuickAction?.("write_paper")}
               variant="ghost"
               size="icon"
               className="text-primary hover:bg-primary/10"
