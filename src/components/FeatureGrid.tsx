@@ -26,19 +26,19 @@ const features = [
 
 export const FeatureGrid = () => {
   return (
-    <section id="features" className="relative py-24 px-4">
+    <section id="features" className="relative py-12 sm:py-16 md:py-24 px-4">
       {/* Section Header */}
-      <div className="text-center mb-16 animate-fade-in">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+      <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
           Powerful Research Tools
         </h2>
-        <p className="text-xl text-foreground-secondary max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-foreground-secondary max-w-2xl mx-auto px-4">
           Everything you need for comprehensive academic research in one intelligent platform
         </p>
       </div>
       
       {/* Feature Cards Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {features.map((feature, index) => (
           <FeatureCard key={feature.title} {...feature} index={index} />
         ))}

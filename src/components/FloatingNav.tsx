@@ -39,15 +39,15 @@ export const FloatingNav = () => {
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
-      <div className="glass-strong rounded-full px-6 py-3 flex items-center gap-2">
+    <nav className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in px-4">
+      <div className="glass-strong rounded-full px-3 sm:px-6 py-2 sm:py-3 flex items-center gap-1 sm:gap-2">
         {sections.map((section) => (
           <Button
             key={section.id}
             variant="ghost"
             size="sm"
             onClick={() => scrollToSection(section.id)}
-            className={`rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 h-8 sm:h-9 ${
               activeSection === section.id
                 ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
                 : "text-foreground-secondary hover:text-foreground hover:bg-muted"

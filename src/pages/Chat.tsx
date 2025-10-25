@@ -29,7 +29,7 @@ export default function Chat() {
   const [papersFound, setPapersFound] = useState<string[]>([]);
   const [pdfPath, setPdfPath] = useState<string | null>(null);
   const [activeTool, setActiveTool] = useState<ToolActivityState | null>(null);
-  const [healthStatus, setHealthStatus] = useState<string>("unknown");
+  const [healthStatus, setHealthStatus] = useState<"healthy" | "error" | "warning">("warning");
   const [sessionCreatedAt, setSessionCreatedAt] = useState<string>("");
   const { toast } = useToast();
 
@@ -42,10 +42,10 @@ export default function Chat() {
   const checkBackendHealth = async () => {
     try {
       const health = await apiService.checkHealth();
-      setHealthStatus(health.status);
+      setHealthStatus(health.status as "healthy" | "error" | "warning");
     } catch (error) {
       console.error("Backend health check failed:", error);
-      setHealthStatus("offline");
+      setHealthStatus("error");
       toast({
         title: "Backend Offline",
         description: "Please ensure the backend server is running on port 8000",
@@ -302,8 +302,8 @@ export default function Chat() {
         />
         
         {/* Chat Area */}
-        <main className="flex-1 ml-80 mb-32 relative">
-          <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <main className="flex-1 lg:ml-80 mb-20 sm:mb-24 md:mb-32 relative mt-14 sm:mt-16">
+          <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8 max-w-4xl">
             {/* Messages */}
             <div className="space-y-6">
               {messages.map((message, index) => (

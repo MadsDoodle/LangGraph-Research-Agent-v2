@@ -42,7 +42,7 @@ export const Sidebar = ({
 
   return (
     <aside className={cn(
-      "fixed left-0 top-16 bottom-0 glass-strong border-r border-primary/30 transition-all duration-300 z-30",
+      "hidden lg:block fixed left-0 top-16 bottom-0 glass-strong border-r border-primary/30 transition-all duration-300 z-30",
       collapsed ? "w-16" : "w-80"
     )}>
       {/* Toggle Button */}
