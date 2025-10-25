@@ -4,7 +4,11 @@ An AI-powered academic research assistant built with LangGraph and LangChain. Th
 
 ## 🎯 Overview
 
-The Research AI Agent is a sophisticated tool that automates academic literature searches across multiple databases including arXiv, PubMed, Semantic Scholar, and CrossRef. It can download papers, extract content from PDFs, and engage in intelligent conversations about research topics.
+The Research AI Agent is a comprehensive system that automates academic exploration across databases such as arXiv, PubMed, Semantic Scholar, and CrossRef. Beyond database search, it can intelligently search the web for relevant research on any topic, download and parse papers, and assist users in querying, summarizing, and analyzing complex research content.
+
+It goes a step further — the agent can generate new research papers in authentic academic formatting and structure, synthesizing insights from multiple sources while maintaining coherence and originality.
+
+With full frontend integration, the system offers an intuitive, visually engaging interface that enhances usability, making advanced research interactions feel fluid, intelligent, and beautifully designed.
 
 ## 🎨 Visual Interface
 
